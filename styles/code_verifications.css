@@ -1,0 +1,33 @@
+:root{
+  --bg:#f5f7fb; --card:#fff; --border:#e7eaf1; --text:#111827; --muted:#6b7280;
+  --blue:#2f80ed;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+.wrap{min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{width:min(520px,92vw);background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
+.title{margin:0 0 8px;font-size:22px}
+.sub{margin:0 0 18px;color:var(--muted);line-height:1.4}
+.email{font-weight:700;color:var(--text)}
+.form{display:grid;gap:10px}
+.label{font-size:13px;color:var(--muted);font-weight:600}
+.input{
+  height:46px;border-radius:12px;border:1px solid var(--border);padding:0 14px;font-size:16px;outline:none;
+  letter-spacing:2px;
+}
+.input:focus{border-color:#cfe0ff;box-shadow:0 0 0 4px rgba(47,128,237,.12);background:#fff}
+.btn{
+  height:46px;border-radius:12px;border:0;background:var(--blue);color:#fff;font-weight:800;cursor:pointer;
+}
+.btn:disabled{opacity:.7;cursor:not-allowed}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.linkBtn{border:0;background:transparent;color:var(--blue);font-weight:800;cursor:pointer}
+.link{color:var(--muted);text-decoration:none;font-weight:700}
+.link:hover,.linkBtn:hover{text-decoration:underline}
+
+.toast{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+  background:#111827;color:#fff;padding:10px 14px;border-radius:12px;
+  display:none;max-width:min(520px,92vw)
+}
+.toast.show{display:block}

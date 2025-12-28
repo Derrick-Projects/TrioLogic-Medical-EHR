@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrioLogic Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../styles/homepage.css" />
+  <link rel="stylesheet" href="../styles/mobile-nav.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">
+          <svg viewBox="0 0 256 256" role="img">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+              <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+              <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+              <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+              <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+              <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+              <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+              <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+              <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+              <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+              <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+              <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+            </g>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">TrioLogic</div>
+        </div>
+      </div>
+
+      <nav class="snav">
+        <a href="./homepage.html" class="snav__item is-active">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"></path>
+            </svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="./patients.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 3-1.57 3-3.5S17.66 4 16 4s-3 1.57-3 3.5S14.34 11 16 11ZM8 11c1.66 0 3-1.57 3-3.5S9.66 4 8 4 5 5.57 5 7.5 6.34 11 8 11Zm8 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C23 14.17 18.33 13 16 13ZM8 13c-.29 0-.62.02-.97.05C5.02 13.22 1 14.4 1 16.5V20h6v-3.5c0-1.1.46-2.05 1.32-2.8C8.22 13.2 8.12 13 8 13Z"></path>
+            </svg>
+          </span>
+          <span>Patients</span>
+        </a>
+
+        <a href="./appointments.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8H5V8h14v2Z"></path>
+            </svg>
+          </span>
+          <span>Appointments</span>
+        </a>
+
+        <a href="./reports.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1v5h5"></path>
+              <path d="M7 13h10M7 17h10M7 9h6"></path>
+            </svg>
+          </span>
+          <span>Report</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__bottom">
+        <a href="./settings.html" class="snav__item snav__item--muted">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
+              <path d="M19.4 15a7.8 7.8 0 0 0 .1-1 7.8 7.8 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a8.6 8.6 0 0 0-1.7-1l-.4-2.6H10l-.4 2.6a8.6 8.6 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7.8 7.8 0 0 0-.1 1 7.8 7.8 0 0 0 .1 1l-2 1.5 2 3.4 2.4-1a8.6 8.6 0 0 0 1.7 1l.4 2.6h4.8l.4-2.6a8.6 8.6 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5Z"></path>
+            </svg>
+          </span>
+          <span>Settings</span>
+        </a>
+
+        <button class="snav__item snav__item--muted" type="button" id="logoutBtn">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 17l5-5-5-5"></path>
+              <path d="M15 12H3"></path>
+              <path d="M21 3v18H9"></path>
+            </svg>
+          </span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    
+    <main class="main">
+      
+      <header class="topbar">
+        <div class="topbar__search" role="search">
+          <input id="globalSearch" class="topbar__input" type="search" placeholder="Search" />
+          <span class="topbar__searchIcon">🔍</span>
+        </div>
+
+        <div class="topbar__right">
+          <button class="topbar__btn" type="button" id="themeToggle">
+            <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button class="topbar__btn" type="button">
+            🔔
+            <span class="notification-badge"></span>
+          </button>
+
+          <button class="topbar__user" type="button">
+            <span class="topbar__avatar"></span>
+            <span>
+              <div class="topbar__userName" data-doctor-name>Doctor</div>
+            </span>
+           
+          </button>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="dashGrid">
+          
+          <section class="card healthCard">
+            <div class="card__header">
+              <div class="card__title">Health Condition Overview</div>
+              <button class="chipBtn" type="button">
+                Last 12 Months <span>▾</span>
+              </button>
+            </div>
+
+            <div class="card__body">
+              <div class="healthChartWrap">
+                <canvas id="healthChart" class="healthChart" height="300"></canvas>
+                <div id="chartTip" class="chartTip"></div>
+              </div>
+
+              <div class="healthFooter">
+                <div class="healthStat">
+                  <div class="healthStat__label">Total Patients</div>
+                  <div class="healthStat__value" id="dashTotalPatients">-</div>
+                </div>
+                <div class="healthStat">
+                  <div class="healthStat__label">Conditions</div>
+                  <div class="healthStat__value" id="dashTotalConditions">-</div>
+                </div>
+                <div class="healthStat">
+                  <div class="healthStat__label">Needs Attention</div>
+                  <div class="healthStat__value" id="dashNeedsAttention">-</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          
+          <section class="card scheduleCard">
+            <div class="card__header">
+              <div>
+                <div class="card__title">Schedule</div>
+                <div style="font-weight:900;font-size:20px;margin-top:2px;">Today</div>
+              </div>
+              <button class="chipBtn" type="button">
+                Today <span>▾</span>
+              </button>
+            </div>
+
+            <div class="card__body scheduleBody">
+              <div class="calendarMini">
+                <div class="calendarMini__top">
+                  <button class="calNavBtn" id="calPrev" type="button">‹</button>
+                  <div class="calendarMini__month" id="calMonthLabel"></div>
+                  <button class="calNavBtn" id="calNext" type="button">›</button>
+                </div>
+
+                <div class="calendarMini__dow">
+                  <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                </div>
+
+                <div id="calendarGrid" class="calendarMini__grid"></div>
+              </div>
+            </div>
+          </section>
+
+          
+          <section class="card taskCard">
+            <div class="card__header">
+              <div class="card__title">My Task</div>
+              <div class="taskCard__actions">
+                <button class="chipBtn" type="button">
+                  Today <span>▾</span>
+                </button>
+                <button class="btnPrimary" id="addTaskBtn" type="button">
+                  ＋ Add task
+                </button>
+              </div>
+            </div>
+
+            <div class="card__body" id="tasksMount"></div>
+
+            <div class="taskFooter">
+              <span>1-10 of 40</span>
+              <button class="iconPlain" type="button">⟳</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <div class="modal" id="eventModal">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__dialog" role="dialog">
+      <div class="modal__header">
+        <h3 class="modal__title" id="eventModalTitle"></h3>
+        <button class="iconClose" type="button" data-close="true">✕</button>
+      </div>
+      <div class="modal__body" id="eventModalBody"></div>
+    </div>
+  </div>
+
+  
+  <div class="modal" id="taskModal">
+    <div class="modal__backdrop" data-modal-close="taskModal"></div>
+
+    <div class="modal__dialog modal__dialog--medium" role="dialog">
+      <div class="modal__header">
+        <h3 class="modal__title" id="taskModalTitle">Add New Task</h3>
+        <button class="iconClose" type="button" data-modal-close="taskModal">✕</button>
+      </div>
+      <form id="taskForm" class="modal__body">
+        <input type="hidden" id="taskId" name="taskId" value="">
+        
+        <div class="form-group">
+          <label for="taskTitle" class="form-label">Task Title <span class="text-danger">*</span></label>
+          <input type="text" id="taskTitle" name="title" class="form-control" placeholder="Enter task title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="taskDescription" class="form-label">Description</label>
+          <textarea id="taskDescription" name="description" class="form-control" rows="3" placeholder="Add task details (optional)"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="taskStatus" class="form-label">Status</label>
+            <select id="taskStatus" name="status" class="form-control">
+              <option value="pending">Pending</option>
+              <option value="in_progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="taskPriority" class="form-label">Priority</label>
+            <select id="taskPriority" name="priority" class="form-control">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="taskDueDate" class="form-label">Due Date</label>
+          <input type="text" id="taskDueDate" name="due_date" class="form-control" placeholder="Select date">
+        </div>
+
+        <div class="modal__footer">
+          <button type="button" class="btn btn-secondary" data-modal-close="taskModal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="taskSubmitBtn">
+            <span id="taskSubmitText">Create Task</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../scripts/homepage.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+</body>
+</html>
+
+

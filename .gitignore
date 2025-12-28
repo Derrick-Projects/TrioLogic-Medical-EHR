@@ -1,0 +1,19 @@
+# Environment files
+.env
+
+# Uploaded files
+uploads/scans/*
+!uploads/scans/.gitkeep
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

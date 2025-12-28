@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Patient & Medical History</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="../styles/add_patient2.css" />
+  <link rel="stylesheet" href="../styles/mobile-nav.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__mark">
+        <svg viewBox="0 0 256 256" width="30" height="30">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+            <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+            <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+            <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+            <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+            <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+            <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+            <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+            <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+            <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+            <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+            <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand__name">TrioLogic</div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="topbar__btn" type="button" id="themeToggle">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="topbar__btn" type="button">
+        🔔
+        <span class="notification-badge">3</span>
+      </button>
+
+      <button class="topbar__user" type="button">
+        <span class="topbar__avatar"></span>
+        <span>
+          <div class="topbar__userName" data-doctor-name>Doctor</div>
+        </span>
+       
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="wrap">
+
+      <section class="grid">
+        
+        <aside class="card stepsCard">
+          <h2 class="stepsTitle">Add New Patient Record</h2>
+
+          <ol class="steps">
+            
+            <li class="step is-done">
+              <div class="step__rail">
+                <div class="step__dot">1</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Personal Information</div>
+                <div class="step__desc">
+                  Enter basic information about<br>
+                  yourself. This will help us populate<br>
+                  your profile details
+                </div>
+              </div>
+            </li>
+
+            
+            <li class="step is-active">
+              <div class="step__rail">
+                <div class="step__dot">2</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Medical History</div>
+                <div class="step__desc">
+                  Add relevant medical background for<br>
+                  this patient. This supports accurate<br>
+                  diagnosis and continuity of care.
+                </div>
+              </div>
+            </li>
+
+            
+            <li class="step">
+              <div class="step__rail">
+                <div class="step__dot">3</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Emergency Contact</div>
+                <div class="step__desc">
+                  Provide the contact information of<br>
+                  someone we can reach to ensure<br>
+                  timely communication in-case of<br>
+                  urgency
+                </div>
+              </div>
+            </li>
+
+            
+            <li class="step">
+              <div class="step__rail">
+                <div class="step__dot">4</div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Billing</div>
+                <div class="step__desc">
+                  Add billing and insurance details for<br>
+                  this patient record.
+                </div>
+              </div>
+            </li>
+          </ol>
+        </aside>
+
+        
+        <section class="card rightCard">
+          <div class="rightCard__head">
+            <h2 class="rightTitle">Medical History</h2>
+          </div>
+
+          <div class="rightCard__body">
+
+            
+            <section class="panel">
+              <div class="panel__head">
+                <div class="panel__title">Kindly select all that applies</div>
+              </div>
+
+              <div class="panel__body">
+                <div class="checksGrid">
+                  <label class="chk"><input type="checkbox" data-condition="hypertension" /> <span>Hypertension</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="arthritis" /> <span>Arthritis</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="kidney_problems" /> <span>Kidney problems</span></label>
+
+                  <label class="chk"><input type="checkbox" data-condition="diabetes" /> <span>Diabetes</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="stroke" /> <span>Stroke</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="sleep_apnea" /> <span>Sleep Apnea</span></label>
+
+                  <label class="chk"><input type="checkbox" data-condition="heart_disease" /> <span>Heart Disease</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="cancer" /> <span>Cancer</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="drug_use" /> <span>Drug use</span></label>
+
+                  <label class="chk"><input type="checkbox" data-condition="asthma" /> <span>Asthma</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="depression" /> <span>Depression</span></label>
+                  <label class="chk"><input type="checkbox" data-condition="hiv_aids" /> <span>HIV/AIDS</span></label>
+                </div>
+
+                <div class="fieldBlock">
+                  <div class="fieldLabel">Other</div>
+                  <textarea id="conditionsOther" class="textarea" rows="3" placeholder="Please specify"></textarea>
+                </div>
+              </div>
+            </section>
+
+            
+            <section class="panel">
+              <div class="panel__head panel__head--row">
+                <div class="panel__title">Allergies</div>
+
+                <label class="radioLink">
+                  <input type="radio" name="allergiesNone" />
+                  <span class="radioDot"></span>
+                  <span>No know allergies</span>
+                </label>
+              </div>
+
+              <div class="panel__body">
+                <div class="checksGrid checksGrid--allergies">
+                  <label class="chk"><input type="checkbox" data-allergy="penicillin" /> <span>Penicillin / Amoxicillin</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="latex" /> <span>Latex</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="contrast_dye" /> <span>Contrast Dye</span></label>
+
+                  <label class="chk"><input type="checkbox" data-allergy="sulpha_drugs" /> <span>Sulpha Drugs</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="peanuts" /> <span>Peanuts / Tree nuts</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="pollen" /> <span>Pollen</span></label>
+
+                  <label class="chk"><input type="checkbox" data-allergy="aspirin" /> <span>Aspirin / NSAIDS</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="shellfish" /> <span>Shellfish</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="bee_stings" /> <span>Bee Stings</span></label>
+
+                  <label class="chk"><input type="checkbox" data-allergy="codeine" /> <span>Codeine / Opioids</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="eggs_dairy" /> <span>Eggs / Dairy</span></label>
+                  <label class="chk"><input type="checkbox" data-allergy="pet_dander" /> <span>Pet Dander</span></label>
+                </div>
+
+                <div class="fieldBlock">
+                  <div class="fieldLabel">Other</div>
+                  <textarea id="allergiesOther" class="textarea" rows="3" placeholder="Please specify"></textarea>
+                </div>
+              </div>
+            </section>
+
+            
+            <section class="panel">
+              <div class="panel__head panel__head--row">
+                <div class="panel__title">Surgical History</div>
+
+                <label class="radioLink">
+                  <input type="radio" name="surgeryNone" />
+                  <span class="radioDot"></span>
+                  <span>No Surgeries</span>
+                </label>
+              </div>
+
+              <div class="panel__body">
+                <div class="twoCol">
+                  <div class="field">
+                    <div class="fieldLabel">Add brief detail of any past surgery</div>
+                    <textarea id="surgeryDetail" class="textarea" rows="3" placeholder="Please specify"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <div class="fieldLabel">
+                      Date of Surgery <span class="req">*</span>
+                    </div>
+                    <input id="surgeryDate" class="input" type="text" placeholder="Select date" />
+                  </div>
+                </div>
+
+                <button class="addLink" type="button">
+                  <span class="plus">＋</span>
+                  Add another surgery
+                </button>
+              </div>
+            </section>
+
+            
+            <section class="panel">
+              <div class="panel__head panel__head--row">
+                <div class="panel__title">Current Medication</div>
+
+                <label class="radioLink">
+                  <input type="radio" name="medNone" />
+                  <span class="radioDot"></span>
+                  <span>No Medication</span>
+                </label>
+              </div>
+
+              <div class="panel__body">
+                <div id="medicationsContainer">
+                  <div class="twoCol twoCol--tight medication-row">
+                    <div class="field">
+                      <div class="fieldLabel">Name of Medication</div>
+                      <input class="input medication-name" type="text" placeholder="Please specify" />
+                    </div>
+
+                    <div class="field">
+                      <div class="fieldLabel">Reason for Medication</div>
+                      <input class="input medication-reason" type="text" placeholder="Please Specify" />
+                    </div>
+                  </div>
+                </div>
+
+                <button class="addLink" type="button" id="addMedicationBtn">
+                  <span class="plus">＋</span>
+                  Add another medication
+                </button>
+              </div>
+            </section>
+
+            
+            <section class="box">
+            <div class="box__head">
+                <h3 class="box__title">Visit Details</h3>
+            </div>
+
+            <div class="box__body">
+                <div class="grid2">
+                <div class="field">
+                    <label class="label" for="visitDate">Visit Date</label>
+                    <input id="visitDate" class="control" type="text" placeholder="Select date" name="visit_date">
+                </div>
+
+                <div class="field">
+                    <label class="label">Immunized</label>
+                    <div class="toggleRow">
+                    <label class="switch">
+                        <input id="immunized" type="checkbox" name="immunized" value="1">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggleText">Patient is immunized</span>
+                    </div>
+                </div>
+                </div>
+
+                <div class="field" style="margin-top: 14px;">
+                <label class="label" for="notes">Notes</label>
+                <textarea id="notes" class="control control--textarea" name="notes" rows="4"
+                    placeholder="Enter clinical notes (optional)"></textarea>
+                </div>
+            </div>
+            
+
+            
+            <input type="hidden" name="allergies" id="allergiesSummary">
+            <input type="hidden" name="medication" id="medicationSummary">
+
+            </section>
+
+            
+            <section class="panel">
+              <div class="panel__head">
+                <div class="panel__title">Medical Scans & Images</div>
+                <span class="panel__subtitle">Upload X-rays, MRI, CT scans, or other medical images</span>
+              </div>
+
+              <div class="panel__body">
+                
+                <div class="twoCol twoCol--tight">
+                  <div class="field">
+                    <div class="fieldLabel">Scan Type</div>
+                    <select id="scanType" class="input">
+                      <option value="">Select scan type</option>
+                      <option value="xray">X-Ray</option>
+                      <option value="mri">MRI Scan</option>
+                      <option value="ct">CT Scan</option>
+                      <option value="ultrasound">Ultrasound</option>
+                      <option value="mammogram">Mammogram</option>
+                      <option value="ecg">ECG/EKG</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <div class="fieldLabel">Scan Date</div>
+                    <input id="scanDate" class="input" type="text" placeholder="Select date" />
+                  </div>
+                </div>
+
+                <div class="field" style="margin-top: 12px;">
+                  <div class="fieldLabel">Description (Optional)</div>
+                  <input id="scanDescription" class="input" type="text" placeholder="e.g., Chest X-Ray, Left Knee MRI" />
+                </div>
+
+                
+                <div class="uploadZone" id="uploadZone">
+                  <div class="uploadZone__icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="uploadZone__text">
+                    <span class="uploadZone__primary">Drag & drop files here</span>
+                    <span class="uploadZone__secondary">or <button type="button" class="uploadZone__btn" id="browseBtn">browse files</button></span>
+                  </div>
+                  <div class="uploadZone__hint">Supported: JPEG, PNG, DICOM, PDF (Max 10MB per file)</div>
+                  <input type="file" id="scanFileInput" multiple accept="image/*,.dcm,.pdf" hidden />
+                </div>
+
+                
+                <div id="scansPreview" class="scansPreview"></div>
+              </div>
+            </section>
+
+          </div>
+        </section>
+      </section>
+
+      
+      <div class="gridFooter">
+        <div></div>
+
+        <div class="footerActions">
+          <button class="backBtn" type="button" id="backBtn">
+            <span class="arrow">←</span> Back
+          </button>
+
+          <button class="continueBtn" type="button" id="continueBtn">Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../scripts/add_patient2.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+</body>
+</html>

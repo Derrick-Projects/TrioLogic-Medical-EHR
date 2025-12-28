@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Patient & Billing</title>
+  <link rel="stylesheet" href="../styles/add_patients4.css" />
+  <link rel="stylesheet" href="../styles/mobile-nav.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <div class="brand__mark">
+        
+        <svg viewBox="0 0 256 256" width="26" height="26">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+            <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+            <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+            <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+            <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+            <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+            <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+            <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+            <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+            <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+            <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+            <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand__name">TrioLogic</div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="topbar__btn" type="button" id="themeToggle">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="topbar__btn" type="button">
+        🔔
+        <span class="notification-badge">3</span>
+      </button>
+
+      <button class="topbar__user" type="button">
+        <span class="topbar__avatar"></span>
+        <span>
+          <div class="topbar__userName" data-doctor-name>Doctor</div>
+        </span>
+       
+      </button>
+    </div>
+  </header>
+
+  
+  <main class="page">
+    <div class="wrap">
+      
+      <aside class="card card--steps">
+        <h2 class="stepsTitle">Add New Patient Record</h2>
+
+        <ol class="steps">
+          <li class="step is-done">
+            <div class="step__rail">
+              <div class="step__dot">1</div>
+              <div class="step__line"></div>
+            </div>
+            <div class="step__content">
+              <div class="step__name">Personal Information</div>
+              <div class="step__desc">
+                Enter basic information about<br>
+                yourself. This will help us populate<br>
+                your profile details
+              </div>
+            </div>
+          </li>
+
+          <li class="step is-done">
+            <div class="step__rail">
+              <div class="step__dot">2</div>
+              <div class="step__line"></div>
+            </div>
+            <div class="step__content">
+              <div class="step__name">Medical History</div>
+              <div class="step__desc">
+                Add relevant medical background for<br>
+                this patient. This supports accurate<br>
+                diagnosis and continuity of care.
+              </div>
+            </div>
+          </li>
+
+          <li class="step is-done">
+            <div class="step__rail">
+              <div class="step__dot">3</div>
+              <div class="step__line"></div>
+            </div>
+            <div class="step__content">
+              <div class="step__name">Emergency Contact</div>
+              <div class="step__desc">
+                Provide the contact information of<br>
+                someone we can reach to ensure<br>
+                timely communication in-case of<br>
+                urgency
+              </div>
+            </div>
+          </li>
+
+          <li class="step is-active">
+            <div class="step__rail">
+              <div class="step__dot">4</div>
+            </div>
+            <div class="step__content">
+              <div class="step__name">Billing</div>
+              <div class="step__desc">
+                Add billing and insurance details for<br>
+                this patient record.
+              </div>
+            </div>
+          </li>
+        </ol>
+      </aside>
+
+      
+      <section class="card card--form">
+        <div class="cardHead">
+          <h1 class="cardTitle">Billing Information</h1>
+        </div>
+
+        <form class="form" id="billingForm" autocomplete="on" novalidate>
+          
+          <input type="hidden" id="patientId" name="patient_id" value="" />
+
+          <div class="grid2">
+            <div class="field">
+              <label class="label" for="billingType">Billing Type <span class="req">*</span></label>
+              <select id="billingType" name="billing_type" class="control" required>
+                <option value="" selected disabled>Select billing type</option>
+                <option value="Insurance">Insurance</option>
+                <option value="Self-pay">Self-pay</option>
+                <option value="Company">Company</option>
+                <option value="Government">Government</option>
+              </select>
+              <div class="hint">How this visit will be billed.</div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="paymentStatus">Payment Status</label>
+              <select id="paymentStatus" name="payment_status" class="control">
+                <option value="" selected>Select status</option>
+                <option value="PENDING">PENDING</option>
+                <option value="PARTIAL">PARTIAL</option>
+                <option value="PAID">PAID</option>
+                <option value="UNPAID">UNPAID</option>
+              </select>
+              <div class="hint">Optional; can be updated later.</div>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label class="label" for="insuranceProvider">Insurance Provider</label>
+              <input id="insuranceProvider" name="insurance_provider" class="control" type="text" placeholder="e.g. AOK, TK, Allianz" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="insuranceNumber">Insurance Number</label>
+              <input id="insuranceNumber" name="insurance_number" class="control" type="text" placeholder="Enter insurance number" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label class="label" for="billingAmount">Billing Amount (€)</label>
+              <input id="billingAmount" name="billing_amount" class="control" type="number" step="0.01" min="0" placeholder="0.00" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="amountPaid">Amount Paid (€)</label>
+              <input id="amountPaid" name="amount_paid" class="control" type="number" step="0.01" min="0" placeholder="0.00" />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label class="label" for="billingDate">Billing Date</label>
+              <input id="billingDate" name="billing_date" class="control" type="text" placeholder="Select date" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="dueDate">Due Date</label>
+              <input id="dueDate" name="due_date" class="control" type="text" placeholder="Select date" />
+            </div>
+          </div>
+
+          <div class="bar">
+            <a class="backLink" href="add_patient3.html">← Back</a>
+
+            <button class="btnPrimary" type="submit" id="saveBtn">
+              Save
+            </button>
+          </div>
+
+          <p class="status" id="statusMsg"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../scripts/add_patients4.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+</body>
+</html>

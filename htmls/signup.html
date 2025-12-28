@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/signup.css" />
+</head>
+<body>
+  <div class="page" role="application">
+    
+    <aside class="left">
+      <header class="left__header">
+        <div class="logo">
+          <span class="logo__mark">
+            <svg viewBox="0 0 256 256" width="34" height="34">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+                <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+                <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+                <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+                <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+                <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+                <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+                <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+                <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+                <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+                <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+                <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+              </g>
+            </svg>
+          </span>
+          <span class="logo__text">TrioLogic</span>
+        </div>
+      </header>
+
+      <section class="how">
+        <h2 class="how__title">How it works</h2>
+
+        <ol class="stepper">
+          <li class="step is-active">
+            <div class="step__dot">1</div>
+            <div class="step__content">
+              <div class="step__name">Personal Information</div>
+              <div class="step__desc">
+                Enter basic information about yourself. This will help us populate your profile details
+              </div>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__dot">2</div>
+            <div class="step__content">
+              <div class="step__name">Confirm Email Address</div>
+              <div class="step__desc">
+                Confirm your email address by the click of a button. This will verify that your email is accurate
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <svg class="blob" viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M56 202.5C11.5 176 7 129 21 98C36 65 71 50 105 49C151 48 177 14 215 7C264 -2 318 1 355 34C391 67 390 117 365 154C340 192 314 224 266 231C214 238 188 208 146 215C106 222 89 229 56 202.5Z" fill="#BEE6F4"/>
+      </svg>
+    </aside>
+
+    
+    <main class="right">
+      <header class="right__top">
+      </header>
+
+      <section class="card">
+        <h1 class="card__title">Create a free account</h1>
+
+        <form id="signupForm" class="form" novalidate>
+          <div class="grid-2">
+            <div class="field">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input id="firstName" name="firstName" type="text" placeholder="Enter name" required />
+              <div class="error" data-error-for="firstName"></div>
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name <span class="req">*</span></label>
+              <input id="lastName" name="lastName" type="text" placeholder="Enter name" required />
+              <div class="error" data-error-for="lastName"></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="username">Username <span class="req">*</span></label>
+            <input id="username" name="username" type="text" placeholder="Enter username" autocomplete="username" required />
+            <div class="error" data-error-for="username"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input id="email" name="email" type="email" placeholder="eg. example@gmail.com" autocomplete="email" required />
+            <div class="error" data-error-for="email"></div>
+          </div>
+
+          <div class="field">
+            <label for="password">Password <span class="req">*</span></label>
+            <div class="input-wrap">
+              <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="new-password" required minlength="8" />
+              <button class="show-btn" type="button" id="togglePassword">Show</button>
+            </div>
+            <div class="error" data-error-for="password"></div>
+            
+            
+            <div class="password-strength" id="passwordStrength" hidden>
+              <div class="strength-meter">
+                <div class="strength-bar" id="strengthBar"></div>
+              </div>
+              <span class="strength-label" id="strengthLabel"></span>
+            </div>
+            
+            
+            <ul class="password-checklist" id="passwordChecklist" hidden>
+              <li id="req-length"><span class="check-icon"></span> 8+ chars</li>
+              <li id="req-uppercase"><span class="check-icon"></span> Uppercase</li>
+              <li id="req-lowercase"><span class="check-icon"></span> Lowercase</li>
+              <li id="req-number"><span class="check-icon"></span> Number</li>
+              <li id="req-special"><span class="check-icon"></span> Special</li>
+            </ul>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm Password <span class="req">*</span></label>
+            <div class="input-wrap">
+              <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" autocomplete="new-password" required />
+              <button class="show-btn" type="button" id="toggleConfirmPassword">Show</button>
+            </div>
+            <div class="error" data-error-for="confirmPassword"></div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <div class="phone">
+              <button class="country" type="button" id="countryBtn">
+                <img class="flagImg" id="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/de.svg" alt="Germany">
+                <span class="dial" id="dialCode">+49</span>
+                <span class="caret">▾</span>
+              </button>
+
+              <input id="phone" name="phone" type="tel" placeholder="8000000000" inputmode="numeric" required />
+            </div>
+            <div class="error" data-error-for="phone"></div>
+
+            <ul class="country-list" id="countryList" role="listbox" hidden>
+              <li role="option" data-iso="ng" data-name="Nigeria" data-code="+234" tabindex="0">Nigeria <span class="muted">+234</span></li>
+              <li role="option" data-iso="gh" data-name="Ghana" data-code="+233" tabindex="-1">Ghana <span class="muted">+233</span></li>
+              <li role="option" data-iso="za" data-name="South Africa" data-code="+27" tabindex="-1">South Africa <span class="muted">+27</span></li>
+              <li role="option" data-iso="eg" data-name="Egypt" data-code="+20" tabindex="-1">Egypt <span class="muted">+20</span></li>
+              <li role="option" data-iso="ke" data-name="Kenya" data-code="+254" tabindex="-1">Kenya <span class="muted">+254</span></li>
+              <li role="option" data-iso="tz" data-name="Tanzania" data-code="+255" tabindex="-1">Tanzania <span class="muted">+255</span></li>
+              <li role="option" data-iso="ug" data-name="Uganda" data-code="+256" tabindex="-1">Uganda <span class="muted">+256</span></li>
+              <li role="option" data-iso="et" data-name="Ethiopia" data-code="+251" tabindex="-1">Ethiopia <span class="muted">+251</span></li>
+              <li role="option" data-iso="ma" data-name="Morocco" data-code="+212" tabindex="-1">Morocco <span class="muted">+212</span></li>
+              <li role="option" data-iso="dz" data-name="Algeria" data-code="+213" tabindex="-1">Algeria <span class="muted">+213</span></li>
+              <li role="option" data-iso="sn" data-name="Senegal" data-code="+221" tabindex="-1">Senegal <span class="muted">+221</span></li>
+              <li role="option" data-iso="ci" data-name="Cote d'Ivoire" data-code="+225" tabindex="-1">Cote d'Ivoire <span class="muted">+225</span></li>
+              <li role="option" data-iso="cm" data-name="Cameroon" data-code="+237" tabindex="-1">Cameroon <span class="muted">+237</span></li>
+              <li role="option" data-iso="de" data-name="Germany" data-code="+49" tabindex="-1">Germany <span class="muted">+49</span></li>
+              <li role="option" data-iso="fr" data-name="France" data-code="+33" tabindex="-1">France <span class="muted">+33</span></li>
+              <li role="option" data-iso="gb" data-name="United Kingdom" data-code="+44" tabindex="-1">United Kingdom <span class="muted">+44</span></li>
+              <li role="option" data-iso="it" data-name="Italy" data-code="+39" tabindex="-1">Italy <span class="muted">+39</span></li>
+              <li role="option" data-iso="es" data-name="Spain" data-code="+34" tabindex="-1">Spain <span class="muted">+34</span></li>
+              <li role="option" data-iso="nl" data-name="Netherlands" data-code="+31" tabindex="-1">Netherlands <span class="muted">+31</span></li>
+              <li role="option" data-iso="se" data-name="Sweden" data-code="+46" tabindex="-1">Sweden <span class="muted">+46</span></li>
+              <li role="option" data-iso="no" data-name="Norway" data-code="+47" tabindex="-1">Norway <span class="muted">+47</span></li>
+              <li role="option" data-iso="ch" data-name="Switzerland" data-code="+41" tabindex="-1">Switzerland <span class="muted">+41</span></li>
+              <li role="option" data-iso="tr" data-name="Turkey" data-code="+90" tabindex="-1">Turkey <span class="muted">+90</span></li>
+              <li role="option" data-iso="sa" data-name="Saudi Arabia" data-code="+966" tabindex="-1">Saudi Arabia <span class="muted">+966</span></li>
+              <li role="option" data-iso="ae" data-name="United Arab Emirates" data-code="+971" tabindex="-1">United Arab Emirates <span class="muted">+971</span></li>
+              <li role="option" data-iso="in" data-name="India" data-code="+91" tabindex="-1">India <span class="muted">+91</span></li>
+              <li role="option" data-iso="pk" data-name="Pakistan" data-code="+92" tabindex="-1">Pakistan <span class="muted">+92</span></li>
+              <li role="option" data-iso="bd" data-name="Bangladesh" data-code="+880" tabindex="-1">Bangladesh <span class="muted">+880</span></li>
+              <li role="option" data-iso="sg" data-name="Singapore" data-code="+65" tabindex="-1">Singapore <span class="muted">+65</span></li>
+              <li role="option" data-iso="cn" data-name="China" data-code="+86" tabindex="-1">China <span class="muted">+86</span></li>
+              <li role="option" data-iso="jp" data-name="Japan" data-code="+81" tabindex="-1">Japan <span class="muted">+81</span></li>
+              <li role="option" data-iso="kr" data-name="South Korea" data-code="+82" tabindex="-1">South Korea <span class="muted">+82</span></li>
+              <li role="option" data-iso="au" data-name="Australia" data-code="+61" tabindex="-1">Australia <span class="muted">+61</span></li>
+              <li role="option" data-iso="nz" data-name="New Zealand" data-code="+64" tabindex="-1">New Zealand <span class="muted">+64</span></li>
+              <li role="option" data-iso="ca" data-name="Canada" data-code="+1" tabindex="-1">Canada <span class="muted">+1</span></li>
+              <li role="option" data-iso="us" data-name="USA" data-code="+1" tabindex="-1">USA <span class="muted">+1</span></li>
+              <li role="option" data-iso="mx" data-name="Mexico" data-code="+52" tabindex="-1">Mexico <span class="muted">+52</span></li>
+              <li role="option" data-iso="br" data-name="Brazil" data-code="+55" tabindex="-1">Brazil <span class="muted">+55</span></li>
+              <li role="option" data-iso="ar" data-name="Argentina" data-code="+54" tabindex="-1">Argentina <span class="muted">+54</span></li>
+            </ul>
+          </div>
+
+          <p class="terms">
+            By clicking on "Submit", you agree to our
+            <a href="#" class="link">Terms of Service</a>
+            and
+            <a href="#" class="link">Privacy Policy</a>.
+          </p>
+
+          <button id="continueBtn" class="primary" type="submit" disabled>Continue</button>
+
+          <div class="bottom-login">
+            <span>Already have an account?</span>
+            <a href="./login.html" class="link">Login</a>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <a href="../index.html" class="footer__link">Home</a>
+        <span class="dot">·</span>
+        <a href="./aboutus.html" class="footer__link">About</a>
+        <span class="dot">·</span>
+        <a href="#" class="footer__link">FAQ</a>
+        <span class="dot">·</span>
+        <a href="#" class="footer__link">Contact</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../scripts/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verify Email</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+  
+  <link rel="stylesheet" href="../styles/signup.css" />
+</head>
+<body>
+  <div class="page" role="application">
+    
+    <aside class="left">
+      <header class="left__header">
+        <div class="logo">
+          <span class="logo__mark">
+            <svg viewBox="0 0 256 256" width="34" height="34">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+                <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+                <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+                <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+                <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+                <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+                <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+                <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+                <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+                <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+                <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+                <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+              </g>
+            </svg>
+          </span>
+          <span class="logo__text">TrioLogic</span>
+        </div>
+      </header>
+
+      <section class="how">
+        <h2 class="how__title">How it works</h2>
+
+        <ol class="stepper">
+          <li class="step">
+            <div class="step__dot">1</div>
+            <div class="step__content">
+              <div class="step__name">Personal Information</div>
+              <div class="step__desc">
+                Enter basic information about yourself. This will help us populate your profile details
+              </div>
+            </div>
+          </li>
+
+          <li class="step is-active">
+            <div class="step__dot">2</div>
+            <div class="step__content">
+              <div class="step__name">Confirm Email Address</div>
+              <div class="step__desc">
+                Enter the 6-digit code we sent to your email to verify your account
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <svg class="blob" viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M56 202.5C11.5 176 7 129 21 98C36 65 71 50 105 49C151 48 177 14 215 7C264 -2 318 1 355 34C391 67 390 117 365 154C340 192 314 224 266 231C214 238 188 208 146 215C106 222 89 229 56 202.5Z" fill="#BEE6F4"/>
+      </svg>
+    </aside>
+
+    
+    <main class="right">
+      <section class="card card--verify">
+        <h1 class="card__title">Verify your email</h1>
+
+        <p class="verifyText">
+          We sent a 6-digit verification code to:
+          <span class="verifyEmail" id="verifyEmail">—</span>
+        </p>
+
+        <form id="verifyForm" class="verifyForm" novalidate>
+          <div class="otp">
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+            <input class="otp__box" inputmode="numeric" maxlength="1"/>
+          </div>
+
+          <div class="error" id="verifyError"></div>
+
+          <button id="verifyBtn" class="primary is-enabled" type="submit" disabled>Verify</button>
+
+          <p class="resend" style="text-align:center;">
+            Didn’t receive the code?
+            <button class="resend__btn" type="button" id="resendBtn">Resend</button>
+          </p>
+
+          <div class="bottom-login" style="margin-top: 10px;">
+            <span>Back to</span>
+            <a class="link" href="./signup.html">Sign up</a>
+            <span>or</span>
+            <a class="link" href="./login.html">Login</a>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <a href="../index.html" class="footer__link">Home</a>
+        <span class="dot">·</span>
+        <a href="#" class="footer__link">FAQ</a>
+        <span class="dot">·</span>
+        <a href="#" class="footer__link">Contact</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../scripts/code_verifications.js"></script>
+</body>
+</html>

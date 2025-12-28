@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add New Patient Record</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="../styles/add_patient.css" />
+  <link rel="stylesheet" href="../styles/mobile-nav.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__mark">
+        <svg viewBox="0 0 256 256" width="30" height="30">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+            <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+            <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+            <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+            <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+            <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+            <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+            <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+            <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+            <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+            <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+            <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand__name">TrioLogic</div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="topbar__btn" type="button" id="themeToggle">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="topbar__btn" type="button">
+        🔔
+        <span class="notification-badge">3</span>
+      </button>
+
+      <button class="topbar__user" type="button">
+        <span class="topbar__avatar"></span>
+        <span>
+          <div class="topbar__userName" data-doctor-name>Doctor</div>
+        </span>
+       
+      </button>
+    </div>
+  </header>
+
+  
+  <main class="page">
+    <div class="wrap">
+      <section class="grid">
+        
+        <aside class="card card--steps">
+          <h2 class="stepsTitle">Add New Patient Record</h2>
+
+          <ol class="steps">
+            <li class="step is-active">
+              <div class="step__rail">
+                <div class="step__dot">1</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Personal Information</div>
+                <div class="step__desc">
+                  Enter basic information about<br>
+                  yourself. This will help us populate<br>
+                  your profile details
+                </div>
+              </div>
+            </li>
+
+            <li class="step">
+              <div class="step__rail">
+                <div class="step__dot">2</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Medical History</div>
+                <div class="step__desc">
+                  Add relevant medical background for<br>
+                  this patient. This supports accurate<br>
+                  diagnosis and continuity of care.
+                </div>
+              </div>
+            </li>
+
+            <li class="step">
+              <div class="step__rail">
+                <div class="step__dot">3</div>
+                <div class="step__line"></div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Emergency Contact</div>
+                <div class="step__desc">
+                  Provide the contact information of<br>
+                  someone we can reach to ensure<br>
+                  timely communication in-case of<br>
+                  urgency
+                </div>
+              </div>
+            </li>
+
+            <li class="step">
+              <div class="step__rail">
+                <div class="step__dot">4</div>
+              </div>
+              <div class="step__content">
+                <div class="step__name">Billing</div>
+                <div class="step__desc">
+                  Add billing and insurance details for<br>
+                  this patient record.
+                </div>
+              </div>
+            </li>
+          </ol>
+        </aside>
+
+        
+        <section class="card card--form">
+          <h2 class="formTitle">Personal Information</h2>
+
+          
+          <div class="uploadRow">
+            <div class="avatarRing">
+              <div class="avatarRing__inner" id="avatarPreview">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 19h16"></path>
+                  <path d="M5 18l5-6 3 4 2-3 4 5"></path>
+                  <path d="M8.5 10.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="uploadInfo">
+              <div class="uploadInfo__title">Add your a profile picture</div>
+              <div class="uploadInfo__actions">
+                <button class="btnUpload" type="button" id="uploadBtn">Upload</button>
+                <div class="uploadInfo__hint">
+                  <div>For best fit, add a square size</div>
+                  <div class="muted">minimum 400px by 400px</div>
+                </div>
+              </div>
+              <input id="fileInput" type="file" accept="image/*" hidden />
+            </div>
+          </div>
+
+          
+          <form class="formGrid" autocomplete="off">
+            
+            <div class="field">
+              <label class="label" for="firstName">First Name <span class="req">*</span></label>
+              <input class="input" id="firstName" type="text" placeholder="First name" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="lastName">Last Name <span class="req">*</span></label>
+              <input class="input" id="lastName" type="text" placeholder="Last name" />
+            </div>
+
+            
+            <div class="field">
+              <label class="label" for="email">Email Address <span class="req">*</span></label>
+              <input class="input" id="email" type="email" placeholder="eg. example@gmail.com" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="gender">Gender <span class="req">*</span></label>
+              <div class="selectWrap">
+                <select class="select" id="gender">
+                  <option value="" selected disabled>Select a gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+                <span class="chev">▾</span>
+              </div>
+            </div>
+
+            
+            <div class="field">
+              <label class="label" for="address">Address <span class="req">*</span></label>
+              <input class="input" id="address" type="text" placeholder="Street name and number" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="nationality">Nationality <span class="req">*</span></label>
+              <div class="selectWrap">
+                <button class="countryBtn" type="button" id="nationalityBtn">
+                  <img class="flagImg" id="nationalityFlag" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/de.svg" alt="Germany">
+                  <span class="dial" id="nationalityLabel">Germany</span>
+                  <span class="chev">▾</span>
+                </button>
+                <input type="hidden" id="nationality" value="DE" />
+              </div>
+
+              <div class="countryMenu" id="nationalityMenu" role="listbox">
+                <button class="countryOption" type="button" role="option" data-iso="ng" data-name="Nigeria">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ng.svg" alt="">
+                  <span>Nigeria</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="gh" data-name="Ghana">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/gh.svg" alt="">
+                  <span>Ghana</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ke" data-name="Kenya">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" alt="">
+                  <span>Kenya</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="za" data-name="South Africa">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/za.svg" alt="">
+                  <span>South Africa</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="eg" data-name="Egypt">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/eg.svg" alt="">
+                  <span>Egypt</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="de" data-name="Germany">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/de.svg" alt="">
+                  <span>Germany</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="us" data-name="United States">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" alt="">
+                  <span>United States</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="gb" data-name="United Kingdom">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/gb.svg" alt="">
+                  <span>United Kingdom</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ca" data-name="Canada">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" alt="">
+                  <span>Canada</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="in" data-name="India">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/in.svg" alt="">
+                  <span>India</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="cn" data-name="China">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/cn.svg" alt="">
+                  <span>China</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="br" data-name="Brazil">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/br.svg" alt="">
+                  <span>Brazil</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="fr" data-name="France">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/fr.svg" alt="">
+                  <span>France</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="es" data-name="Spain">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/es.svg" alt="">
+                  <span>Spain</span>
+                </button>
+              </div>
+            </div>
+
+            
+            <div class="field">
+              <label class="label" for="zip">Zip code <span class="req">*</span></label>
+              <input class="input" id="zip" type="text" placeholder="Enter zip code" />
+            </div>
+
+            <div class="field">
+              <label class="label" for="state">State <span class="req">*</span></label>
+              <div class="selectWrap">
+                <select class="select" id="state">
+                  <option value="" selected disabled>Select state</option>
+                  <option>Baden-Württemberg</option>
+                  <option>Bavaria</option>
+                  <option>Berlin</option>
+                  <option>Brandenburg</option>
+                  <option>Bremen</option>
+                  <option>Hamburg</option>
+                  <option>Hesse</option>
+                  <option>Lower Saxony</option>
+                  <option>Mecklenburg-Vorpommern</option>
+                  <option>North Rhine-Westphalia</option>
+                  <option>Rhineland-Palatinate</option>
+                  <option>Saarland</option>
+                  <option>Saxony</option>
+                  <option>Saxony-Anhalt</option>
+                  <option>Schleswig-Holstein</option>
+                  <option>Thuringia</option>
+                </select>
+                <span class="chev">▾</span>
+              </div>
+            </div>
+
+            
+            <div class="field">
+              <label class="label" for="dob">Date of Birth <span class="req">*</span></label>
+              <div class="dateWrap">
+                <input class="input" id="dob" type="text" placeholder="Select date" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="phone">Phone Number <span class="req">*</span></label>
+              <div class="phone">
+                <button class="countryBtn" type="button" id="countryBtn">
+                  <img class="flagImg" id="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/de.svg" alt="Germany">
+                  <span class="dial" id="dialCode">+49</span>
+                  <span class="chevSm">v</span>
+                </button>
+                <input class="phoneInput" id="phone" type="tel" placeholder="8000000000" />
+              </div>
+
+              <div class="countryMenu" id="countryMenu" role="listbox">
+                <button class="countryOption" type="button" role="option" data-iso="ng" data-name="Nigeria" data-dial="+234">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ng.svg" alt="">
+                  <span>Nigeria</span>
+                  <span class="muted">+234</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="gh" data-name="Ghana" data-dial="+233">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/gh.svg" alt="">
+                  <span>Ghana</span>
+                  <span class="muted">+233</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="za" data-name="South Africa" data-dial="+27">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/za.svg" alt="">
+                  <span>South Africa</span>
+                  <span class="muted">+27</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="eg" data-name="Egypt" data-dial="+20">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/eg.svg" alt="">
+                  <span>Egypt</span>
+                  <span class="muted">+20</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ke" data-name="Kenya" data-dial="+254">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ke.svg" alt="">
+                  <span>Kenya</span>
+                  <span class="muted">+254</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="tz" data-name="Tanzania" data-dial="+255">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/tz.svg" alt="">
+                  <span>Tanzania</span>
+                  <span class="muted">+255</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ug" data-name="Uganda" data-dial="+256">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ug.svg" alt="">
+                  <span>Uganda</span>
+                  <span class="muted">+256</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="et" data-name="Ethiopia" data-dial="+251">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/et.svg" alt="">
+                  <span>Ethiopia</span>
+                  <span class="muted">+251</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ma" data-name="Morocco" data-dial="+212">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ma.svg" alt="">
+                  <span>Morocco</span>
+                  <span class="muted">+212</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="dz" data-name="Algeria" data-dial="+213">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/dz.svg" alt="">
+                  <span>Algeria</span>
+                  <span class="muted">+213</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="sn" data-name="Senegal" data-dial="+221">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/sn.svg" alt="">
+                  <span>Senegal</span>
+                  <span class="muted">+221</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ci" data-name="Cote d'Ivoire" data-dial="+225">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ci.svg" alt="">
+                  <span>Cote d'Ivoire</span>
+                  <span class="muted">+225</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="cm" data-name="Cameroon" data-dial="+237">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/cm.svg" alt="">
+                  <span>Cameroon</span>
+                  <span class="muted">+237</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="de" data-name="Germany" data-dial="+49">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/de.svg" alt="">
+                  <span>Germany</span>
+                  <span class="muted">+49</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="fr" data-name="France" data-dial="+33">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/fr.svg" alt="">
+                  <span>France</span>
+                  <span class="muted">+33</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="gb" data-name="United Kingdom" data-dial="+44">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/gb.svg" alt="">
+                  <span>United Kingdom</span>
+                  <span class="muted">+44</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="it" data-name="Italy" data-dial="+39">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/it.svg" alt="">
+                  <span>Italy</span>
+                  <span class="muted">+39</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="es" data-name="Spain" data-dial="+34">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/es.svg" alt="">
+                  <span>Spain</span>
+                  <span class="muted">+34</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="nl" data-name="Netherlands" data-dial="+31">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/nl.svg" alt="">
+                  <span>Netherlands</span>
+                  <span class="muted">+31</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="se" data-name="Sweden" data-dial="+46">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/se.svg" alt="">
+                  <span>Sweden</span>
+                  <span class="muted">+46</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="no" data-name="Norway" data-dial="+47">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/no.svg" alt="">
+                  <span>Norway</span>
+                  <span class="muted">+47</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ch" data-name="Switzerland" data-dial="+41">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ch.svg" alt="">
+                  <span>Switzerland</span>
+                  <span class="muted">+41</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="tr" data-name="Turkey" data-dial="+90">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/tr.svg" alt="">
+                  <span>Turkey</span>
+                  <span class="muted">+90</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="sa" data-name="Saudi Arabia" data-dial="+966">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/sa.svg" alt="">
+                  <span>Saudi Arabia</span>
+                  <span class="muted">+966</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ae" data-name="United Arab Emirates" data-dial="+971">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ae.svg" alt="">
+                  <span>United Arab Emirates</span>
+                  <span class="muted">+971</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="in" data-name="India" data-dial="+91">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/in.svg" alt="">
+                  <span>India</span>
+                  <span class="muted">+91</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="pk" data-name="Pakistan" data-dial="+92">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/pk.svg" alt="">
+                  <span>Pakistan</span>
+                  <span class="muted">+92</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="bd" data-name="Bangladesh" data-dial="+880">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/bd.svg" alt="">
+                  <span>Bangladesh</span>
+                  <span class="muted">+880</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="sg" data-name="Singapore" data-dial="+65">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/sg.svg" alt="">
+                  <span>Singapore</span>
+                  <span class="muted">+65</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="cn" data-name="China" data-dial="+86">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/cn.svg" alt="">
+                  <span>China</span>
+                  <span class="muted">+86</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="jp" data-name="Japan" data-dial="+81">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/jp.svg" alt="">
+                  <span>Japan</span>
+                  <span class="muted">+81</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="kr" data-name="South Korea" data-dial="+82">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/kr.svg" alt="">
+                  <span>South Korea</span>
+                  <span class="muted">+82</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="au" data-name="Australia" data-dial="+61">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/au.svg" alt="">
+                  <span>Australia</span>
+                  <span class="muted">+61</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="nz" data-name="New Zealand" data-dial="+64">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/nz.svg" alt="">
+                  <span>New Zealand</span>
+                  <span class="muted">+64</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ca" data-name="Canada" data-dial="+1">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ca.svg" alt="">
+                  <span>Canada</span>
+                  <span class="muted">+1</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="us" data-name="USA" data-dial="+1">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/us.svg" alt="">
+                  <span>USA</span>
+                  <span class="muted">+1</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="mx" data-name="Mexico" data-dial="+52">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/mx.svg" alt="">
+                  <span>Mexico</span>
+                  <span class="muted">+52</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="br" data-name="Brazil" data-dial="+55">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/br.svg" alt="">
+                  <span>Brazil</span>
+                  <span class="muted">+55</span>
+                </button>
+                <button class="countryOption" type="button" role="option" data-iso="ar" data-name="Argentina" data-dial="+54">
+                  <img class="flagImg" src="https://cdn.jsdelivr.net/npm/flag-icons/flags/4x3/ar.svg" alt="">
+                  <span>Argentina</span>
+                  <span class="muted">+54</span>
+                </button>
+              </div>
+            </div>
+
+            
+            <div class="field">
+              <label class="label" for="reason">Reason For Hospital Visit</label>
+              <textarea class="textarea" id="reason" rows="4" placeholder="Enter brief detail of patient’s concern"></textarea>
+            </div>
+
+            
+            <div class="actions">
+              <button class="btnCancel" type="button" onclick="window.location.href='./homepage.html'">
+                <span class="xIcon">⊗</span>
+                Cancel
+              </button>
+
+              <button class="btnContinue" type="button">Continue</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../scripts/add_patient.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+</body>
+</html>
+
+
