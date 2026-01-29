@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Update Medical Record</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+  <link rel="stylesheet" href="../styles/patients.css" />
+  <link rel="stylesheet" href="../styles/update_medical_record.css" />
+  <link rel="stylesheet" href="../styles/mobile-nav.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">
+          <svg viewBox="0 0 256 256" role="img">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 124.021 14.069 A 114.000 114.000 0 0 1 207.191 45.995" stroke="#B5F0FF" stroke-width="54.0"/>
+              <path d="M 172.375 28.332 A 109.100 109.100 0 0 1 230.520 90.686" stroke="#86E3FF" stroke-width="51.3"/>
+              <path d="M 207.822 61.022 A 104.200 104.200 0 0 1 231.629 138.892" stroke="#60C9FF" stroke-width="48.6"/>
+              <path d="M 224.350 103.977 A 99.300 99.300 0 0 1 212.211 180.621" stroke="#3B9BFF" stroke-width="45.9"/>
+              <path d="M 220.337 147.627 A 94.400 94.400 0 0 1 178.024 208.056" stroke="#2D7CF3" stroke-width="43.2"/>
+              <path d="M 198.527 183.102 A 89.500 89.500 0 0 1 137.355 217.010" stroke="#2563EB" stroke-width="40.5"/>
+              <path d="M 165.086 204.038 A 84.600 84.600 0 0 1 99.065 207.498" stroke="#1D4ED8" stroke-width="37.8"/>
+              <path d="M 128.000 207.700 A 79.700 79.700 0 0 1 70.669 183.364" stroke="#1E40AF" stroke-width="35.1"/>
+              <path d="M 95.210 195.230 A 74.800 74.800 0 0 1 56.861 151.114" stroke="#1E3A8A" stroke-width="32.4"/>
+              <path d="M 72.918 171.035 A 69.900 69.900 0 0 1 58.780 118.272" stroke="#0F2C5C" stroke-width="29.7"/>
+              <path d="M 64.420 141.514 A 65.000 65.000 0 0 1 74.113 91.652" stroke="#0B4F8A" stroke-width="27.0"/>
+              <path d="M 69.685 113.460 A 60.100 60.100 0 0 1 97.950 75.952" stroke="#1AA6B7" stroke-width="24.3"/>
+            </g>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <div class="brand__name">TrioLogic</div>
+        </div>
+      </div>
+
+      <nav class="snav">
+        <a href="./homepage.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"></path>
+            </svg>
+          </span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="./patients.html" class="snav__item is-active">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 3-1.57 3-3.5S17.66 4 16 4s-3 1.57-3 3.5S14.34 11 16 11ZM8 11c1.66 0 3-1.57 3-3.5S9.66 4 8 4 5 5.57 5 7.5 6.34 11 8 11Zm8 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C23 14.17 18.33 13 16 13ZM8 13c-.29 0-.62.02-.97.05C5.02 13.22 1 14.4 1 16.5V20h6v-3.5c0-1.1.46-2.05 1.32-2.8C8.22 13.2 8.12 13 8 13Z"></path>
+            </svg>
+          </span>
+          <span>Patients</span>
+        </a>
+
+        <a href="./appointments.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8H5V8h14v2Z"></path>
+            </svg>
+          </span>
+          <span>Appointments</span>
+        </a>
+
+        <a href="./reports.html" class="snav__item">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1v5h5"></path>
+              <path d="M7 13h10M7 17h10M7 9h6"></path>
+            </svg>
+          </span>
+          <span>Report</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__bottom">
+        <a href="./settings.html" class="snav__item snav__item--muted">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
+              <path d="M19.4 15a7.8 7.8 0 0 0 .1-1 7.8 7.8 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a8.6 8.6 0 0 0-1.7-1l-.4-2.6H10l-.4 2.6a8.6 8.6 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7.8 7.8 0 0 0-.1 1 7.8 7.8 0 0 0 .1 1l-2 1.5 2 3.4 2.4-1a8.6 8.6 0 0 0 1.7 1l.4 2.6h4.8l.4-2.6a8.6 8.6 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5Z"></path>
+            </svg>
+          </span>
+          <span>Settings</span>
+        </a>
+
+        <button class="snav__item snav__item--muted" type="button" id="logoutBtn">
+          <span class="snav__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 17l5-5-5-5"></path>
+              <path d="M15 12H3"></path>
+              <path d="M21 3v18H9"></path>
+            </svg>
+          </span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+
+    <main class="main">
+
+      <header class="topbar">
+        <div class="topbar__search" role="search">
+          <input id="globalSearch" class="topbar__input" type="search" placeholder="Search" />
+          <span class="topbar__searchIcon">🔍</span>
+        </div>
+
+        <div class="topbar__right">
+          <button class="topbar__btn" type="button" id="themeToggle">
+            <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button class="topbar__btn" type="button">
+            🔔
+            <span class="notification-badge">3</span>
+          </button>
+
+          <button class="topbar__user" type="button">
+            <span class="topbar__avatar"></span>
+            <span>
+              <div class="topbar__userName" data-doctor-name>Doctor</div>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <div class="container">
+
+        <div class="page-header">
+          <button class="btn-back" onclick="window.location.href='patients.html'">← Back</button>
+          <h1 class="pageTitle">Update Medical Record: <span id="patientName">Loading...</span></h1>
+        </div>
+
+        <div class="tabs">
+          <button class="tab is-active" data-tab="vitals">📊 Vital Signs</button>
+          <button class="tab" data-tab="scans">🔬 Medical Scans</button>
+          <button class="tab" data-tab="notes">📝 Clinical Notes</button>
+          <button class="tab" data-tab="prescriptions">💊 Prescriptions</button>
+        </div>
+
+        <div class="tab-content">
+
+          <div id="vitals-panel" class="panel is-active">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Record Vital Signs</h2>
+              </div>
+              <div class="card__body">
+                <form id="vitalsForm">
+                  <div class="form-grid">
+
+                    <div class="field-group">
+                      <label class="label">Blood Pressure (mmHg)</label>
+                      <div class="bp-group">
+                        <input type="number" id="bp_systolic" placeholder="120" min="60" max="200" class="input input--small" />
+                        <span class="bp-separator">/</span>
+                        <input type="number" id="bp_diastolic" placeholder="80" min="40" max="140" class="input input--small" />
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="heart_rate">Heart Rate (bpm)</label>
+                      <input type="number" id="heart_rate" placeholder="72" min="40" max="200" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="temperature">Temperature (°C)</label>
+                      <input type="number" id="temperature" step="0.1" placeholder="36.6" min="35" max="42" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="oxygen_saturation">Oxygen Saturation (%)</label>
+                      <input type="number" id="oxygen_saturation" placeholder="98" min="70" max="100" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="respiratory_rate">Respiratory Rate (breaths/min)</label>
+                      <input type="number" id="respiratory_rate" placeholder="16" min="8" max="40" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="weight">Weight (kg)</label>
+                      <input type="number" id="weight" step="0.1" placeholder="70.0" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="height">Height (cm)</label>
+                      <input type="number" id="height" step="0.1" placeholder="175.0" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="bmi">BMI</label>
+                      <input type="number" id="bmi" step="0.1" placeholder="Auto-calculated" class="input" readonly />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="recorded_at">Recording Date & Time</label>
+                      <input type="text" id="recorded_at" placeholder="Select date and time" class="input" />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="vital_notes">Notes (Optional)</label>
+                      <textarea id="vital_notes" rows="3" placeholder="Any observations or notes about these readings..." class="textarea"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Vital Signs</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+              <div class="card__header">
+                <h2 class="card__title">Recent Vital Signs</h2>
+              </div>
+              <div class="card__body">
+                <div id="vitalsHistory"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="scans-panel" class="panel">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Upload Medical Scans</h2>
+              </div>
+              <div class="card__body">
+                <form id="scansForm">
+                  <div class="form-grid">
+
+                    <div class="field">
+                      <label class="label" for="scan_type">Scan Type <span class="required">*</span></label>
+                      <select id="scan_type" class="input" required>
+                        <option value="">Select type...</option>
+                        <option value="xray">X-Ray</option>
+                        <option value="mri">MRI Scan</option>
+                        <option value="ct">CT Scan</option>
+                        <option value="ultrasound">Ultrasound</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="scan_date">Scan Date</label>
+                      <input type="text" id="scan_date" placeholder="Select date" class="input" />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="scan_description">Description</label>
+                      <input type="text" id="scan_description" placeholder="e.g., Chest X-Ray, Left Knee MRI" class="input" />
+                    </div>
+                  </div>
+
+                  <div class="uploadZone" id="uploadZone">
+                    <div class="uploadZone__icon">
+                      <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="uploadZone__text">
+                      <span class="uploadZone__primary">Drag & drop files here</span>
+                      <span class="uploadZone__secondary">or <button type="button" class="uploadZone__btn" id="browseScanBtn">browse files</button></span>
+                    </div>
+                    <div class="uploadZone__hint">Supported: JPEG, PNG, PDF, DICOM (Max 10MB)</div>
+                    <input type="file" id="scanFileInput" multiple accept="image/*,.dcm,.pdf" hidden />
+                  </div>
+
+                  <div id="scanPreview" class="scanPreview"></div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="uploadScanBtn">Upload Scan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+              <div class="card__header">
+                <h2 class="card__title">Uploaded Scans</h2>
+              </div>
+              <div class="card__body">
+                <div id="existingScans"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="notes-panel" class="panel">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Write Clinical Note</h2>
+              </div>
+              <div class="card__body">
+                <form id="notesForm">
+                  <div class="form-grid">
+
+                    <div class="field">
+                      <label class="label" for="note_type">Note Type</label>
+                      <select id="note_type" class="input">
+                        <option value="visit">Visit Note</option>
+                        <option value="observation">Observation</option>
+                        <option value="diagnosis">Diagnosis</option>
+                        <option value="treatment">Treatment</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="note_date">Note Date</label>
+                      <input type="text" id="note_date" placeholder="Select date and time" class="input" />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="note_title">Title (Optional)</label>
+                      <input type="text" id="note_title" placeholder="e.g., Follow-up Visit, Initial Consultation" class="input" />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="note_content">Clinical Note <span class="required">*</span></label>
+                      <textarea id="note_content" rows="10" placeholder="Enter detailed clinical notes here..." class="textarea" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Clinical Note</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+              <div class="card__header">
+                <h2 class="card__title">Recent Clinical Notes</h2>
+              </div>
+              <div class="card__body">
+                <div id="notesHistory"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="prescriptions-panel" class="panel">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Write Prescription</h2>
+              </div>
+              <div class="card__body">
+                <form id="prescriptionsForm">
+                  <div class="form-grid">
+
+                    <div class="field">
+                      <label class="label" for="medication_name">Medication Name <span class="required">*</span></label>
+                      <input type="text" id="medication_name" placeholder="e.g., Amoxicillin" class="input" required />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="dosage">Dosage <span class="required">*</span></label>
+                      <input type="text" id="dosage" placeholder="e.g., 500mg, 10ml" class="input" required />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="frequency">Frequency <span class="required">*</span></label>
+                      <input type="text" id="frequency" placeholder="e.g., Twice daily, Every 8 hours" class="input" required />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="duration">Duration</label>
+                      <input type="text" id="duration" placeholder="e.g., 7 days, 2 weeks" class="input" />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="start_date">Start Date <span class="required">*</span></label>
+                      <input type="text" id="start_date" placeholder="Select date" class="input" required />
+                    </div>
+
+                    <div class="field">
+                      <label class="label" for="end_date">End Date</label>
+                      <input type="text" id="end_date" placeholder="Select date" class="input" />
+                    </div>
+
+                    <div class="field field--full">
+                      <label class="label" for="prescription_notes">Instructions & Notes</label>
+                      <textarea id="prescription_notes" rows="3" placeholder="e.g., Take with food, Avoid alcohol" class="textarea"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Prescription</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+              <div class="card__header">
+                <h2 class="card__title">Active Prescriptions</h2>
+              </div>
+              <div class="card__body">
+                <div id="prescriptionsHistory"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../scripts/update_medical_record.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+</body>
+</html>

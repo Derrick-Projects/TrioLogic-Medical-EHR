@@ -23,7 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Validate patient_id
 $patient_id = 0;
 if (isset($_POST['patient_id'])) {
-    $patient_id = (int)$_POST['patient_id'];
+    $patient_id_raw = $_POST['patient_id'];
+    // Handle both "P0001" format and numeric format
+    if (preg_match('/^P(\d+)$/i', $patient_id_raw, $matches)) {
+        $patient_id = (int)$matches[1];
+    } else {
+        $patient_id = (int)$patient_id_raw;
+    }
 }
 if ($patient_id <= 0) {
     http_response_code(400);
@@ -127,7 +133,7 @@ if (!move_uploaded_file($file['tmp_name'], $filePath)) {
     exit;
 }
 
-// Insert into database
+
 try {
     $sql = "INSERT INTO patient_scans (
         patient_id, scan_type, scan_name, file_name, file_path, 

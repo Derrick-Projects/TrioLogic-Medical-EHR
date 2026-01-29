@@ -110,6 +110,7 @@ function loadRecentPatients() {
           '<div class="tableCol">' +
             '<div class="tableActions">' +
               '<button class="tableActionBtn" aria-label="View patient" title="View" onclick="window.location.href=\'view_patient.html?id=' + patient.id + '\'">👁️</button>' +
+              '<button class="tableActionBtn" aria-label="Update medical record" title="Update Record" onclick="window.location.href=\'update_medical_record.html?id=' + patient.id + '\'">📔</button>' +
               '<button class="tableActionBtn" aria-label="Edit patient" title="Edit" onclick="window.location.href=\'edit_patient.html?id=' + patient.id + '\'">✏️</button>' +
               '<button class="tableActionBtn tableActionBtn--delete" aria-label="Delete patient" title="Delete" onclick="deletePatient(\'' + patient.id + '\', \'' + escapedNameForAttr + '\')">' +
                 '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
